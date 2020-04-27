@@ -1,18 +1,17 @@
 #!/bin/bash
-# Install files related to making sound work
+# Override console-setup.service to fix tty1 after console-setup is run
 
 PROG_PATH=${PROG_PATH:-$(readlink -e $0)}
 PROG_DIR=${PROG_DIR:-$(dirname ${PROG_PATH})}
 PROG_NAME=${PROG_NAME:-$(basename ${PROG_PATH})}
 
-SOURCE_FILE=${PROG_DIR}/../systemd/fix_tty1_font.service
-DEST_FILE=/etc/systemd/system/fix_tty1_font.service
+SOURCE_DIR=${PROG_DIR}/../systemd
+DEST_DIR=/etc/systemd/system
 
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file not found: $SOURCE_FILE"
     exit 1
 fi
 
-\cp -fv "$SOURCE_FILE" "$DEST_FILE"
-systemctl enable fix_tty1_font.service
+\cp -frv "$SOURCE_DIR"/* "$DEST_DIR"/
 exit $?
