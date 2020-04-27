@@ -23,4 +23,7 @@ if [ ! -f "${FONT_SOURCE_FILE}" ]; then
 fi
 
 \cp -f "$FONT_SOURCE_FILE" "$FONT_DEST_FILE"
+ret=$?
+ls -l "$FONT_DEST_FILE"
+file "$FONT_DEST_FILE"
 exit $?
