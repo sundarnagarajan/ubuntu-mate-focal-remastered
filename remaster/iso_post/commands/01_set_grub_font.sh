@@ -12,20 +12,15 @@ ISO_EXTRACT_DIR=$(readlink -e $ISO_EXTRACT_DIR)
 
 SCRIPT_DIR=${PROG_DIR}
 
-# Name of font file in GRUB_DIR
-FONT_FILE=font.pf2
-
-FONT_SOURCE_FILE="${PROG_DIR}/../grub/${FONT_FILE}"
-FONT_SOURCE_FILE=$(readlink -e $FONT_SOURCE_FILE)
-if [ ! -f "${FONT_SOURCE_FILE}" ]; then
-    echo "Font file not found: ${FONT_SOURCE_FILE}"
+SOURCE_DIR=$(readlink -e ${PROG_DIR}/../grub)
+if [ ! -d "${SOURCE_DIR}" ]; then
+    echo "Directory not found: ${SOURCE_DIR}"
     exit 1
 fi
-FONT_DEST_FILE="${ISO_EXTRACT_DIR}/boot/grub${FONT_FILE}"
-FONT_DEST_FILE=$(readlink -e $FONT_DEST_FILE)
-\cp -fv "$FONT_SOURCE_FILE" "$FONT_DEST_FILE"
+DEST_DIR="${ISO_EXTRACT_DIR}/boot/grub"
+\cp -fv "${SOURCE_DIR}"/* "${DEST_DIR}"/
 
 ret=$?
-ls -l "$FONT_DEST_FILE"
-file "$FONT_DEST_FILE"
+ls -l "${DEST_DIR}"/
+file "${DEST_DIR}"/*
 exit $?
