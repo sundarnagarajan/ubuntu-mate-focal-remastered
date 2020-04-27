@@ -13,5 +13,6 @@ if [ ! -f "$SOURCE_FILE" ]; then
     exit 1
 fi
 
-\cp -frv "$SOURCE_DIR"/* "$DEST_DIR"/
+echo "Copying $SOURCE_DIR to $DEST_DIR"
+\cp -fr "$SOURCE_DIR"/* "$DEST_DIR"/
 exit $?

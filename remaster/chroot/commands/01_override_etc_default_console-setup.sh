@@ -13,5 +13,5 @@ if [ ! -f "$SOURCE_FILE" ]; then
     exit 1
 fi
 
-\cp -f "$SOURCE_FILE" "$DEST_FILE"
+\cp -fv "$SOURCE_FILE" "$DEST_FILE"
 exit $?
