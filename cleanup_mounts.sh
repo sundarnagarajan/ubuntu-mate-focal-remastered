@@ -7,10 +7,10 @@ fi
 PROG_DIR=${PROG_DIR:-$(dirname ${PROG_PATH})}
 PROG_NAME=${PROG_NAME:-$(basename ${PROG_PATH})}
 SCRIPT_DIR="${PROG_DIR}"
+TOP_DIR=$(readlink -e ${PROG_DIR}/..)
 
 function setvars() {
     START_TIME=$(date)
-    export TOP_DIR=$(readlink -e $(dirname $0))
     export R_DIR=${TOP_DIR}/ubuntu-mate-focal-remastered/remaster
     export INPUT_ISO=${TOP_DIR}/ISO/in/source.iso
     export EXTRACT_DIR=${TOP_DIR}/ISO/extract
