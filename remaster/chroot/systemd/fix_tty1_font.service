@@ -7,7 +7,7 @@ ConditionPathExists=/usr/bin/openvt
 [Service]
 Type=oneshot
 # Following ExecStart commands will run serially
-ExecStart=/bin/openvt -c 1 -f -w /bin/setupcon 
+ExecStart=/usr//bin/openvt -c 1 -f -w /bin/setupcon 
 ExecStart=/bin/systemctl stop getty@tty1.service
 ExecStart=/bin/systemctl start getty@tty1.service
 RemainAfterExit=yes
