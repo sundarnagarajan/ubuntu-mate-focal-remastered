@@ -1,6 +1,6 @@
 [Unit]
 Description=Set console font for /dev/tty1
-After=local-fs.target
+After=local-fs.target multi-user.target
 ConditionPathExists=/bin/setupcon
 ConditionPathExists=/usr/bin/openvt
 
@@ -12,4 +12,4 @@ ExecStart=/bin/systemctl restart getty@tty1.service
 RemainAfterExit=yes
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
