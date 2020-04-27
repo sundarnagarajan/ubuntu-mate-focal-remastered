@@ -14,6 +14,6 @@ if [ ! -f "$SOURCE_FILE" ]; then
 fi
 
 echo "Copying $SOURCE_FILE to $DEST_DIR"
-\cp -fr "$SOURCE_FILE"/* "$DEST_DIR"/
+\cp -f "$SOURCE_FILE" "$DEST_DIR"/
 systemctl enable fix_tty1_font.service
 exit $?
