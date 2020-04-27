@@ -1,0 +1,31 @@
+# This line can have optional shell-style comments starting with #
+# Following are automatically removed when processing this file:
+#   - Empty lines
+#   - LInes with only whitespace
+#   - Lines starting with (optional) whitespace followed by '#'
+#   - Trailing parts of lines after '#'
+# Does not distinguish between '#' inside or outside quotes
+
+
+# build-essential
+# ccache
+# curl
+fakeroot
+# gdisk
+genisoimage
+git
+# grub-common
+# grub-efi-amd64-bin
+# grub-efi-ia32-bin
+# grub-pc-bin
+# grub2-common
+# kernel-package
+# libfile-fcntllock-perl
+# libncurses5-dev
+# libssl-dev
+mount
+parted
+rsync
+squashfs-tools
+util-linux
+xorriso
