@@ -15,7 +15,7 @@ SCRIPT_DIR=${PROG_DIR}
 # Name of font file in GRUB_DIR
 FONT_FILE=font.pf2
 
-FONT_DEST_FILE="/${ISO_EXTRACT_DIR}/boot/grub${FONT_FILE}"
+FONT_DEST_FILE="${ISO_EXTRACT_DIR}/boot/grub${FONT_FILE}"
 FONT_SOURCE_FILE="${PROG_DIR}/../grub/${FONT_FILE}"
 if [ ! -f "${FONT_SOURCE_FILE}" ]; then
     echo "Font file not found: ${FONT_SOURCE_FILE}"
