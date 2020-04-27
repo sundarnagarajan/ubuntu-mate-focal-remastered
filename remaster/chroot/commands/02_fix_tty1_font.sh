@@ -8,8 +8,8 @@ PROG_NAME=${PROG_NAME:-$(basename ${PROG_PATH})}
 SOURCE_DIR=${PROG_DIR}/../systemd
 DEST_DIR=/etc/systemd/system
 
-if [ ! -f "$SOURCE_FILE" ]; then
-    echo "Source file not found: $SOURCE_FILE"
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Source dir not found: $SOURCE_DIR"
     exit 1
 fi
 
