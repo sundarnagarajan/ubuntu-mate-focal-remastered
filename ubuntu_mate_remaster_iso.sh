@@ -14,7 +14,7 @@ TOP_DIR=$(readlink -e ${PROG_DIR}/..)
 
 function setvars() {
     START_TIME=$(date)
-    export R_DIR=${TOP_DIR}/rdp-thinbook-linux/remaster
+    export R_DIR=${TOP_DIR}/ubuntu-mate-focal-remastered/remaster
     export INPUT_ISO=${TOP_DIR}/ISO/in/source.iso
     export EXTRACT_DIR=${TOP_DIR}/ISO/extract
     export OUTPUT_ISO=${TOP_DIR}/ISO/out/modified.iso
