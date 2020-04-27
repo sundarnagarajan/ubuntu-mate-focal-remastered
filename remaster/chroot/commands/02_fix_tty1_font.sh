@@ -5,14 +5,15 @@ PROG_PATH=${PROG_PATH:-$(readlink -e $0)}
 PROG_DIR=${PROG_DIR:-$(dirname ${PROG_PATH})}
 PROG_NAME=${PROG_NAME:-$(basename ${PROG_PATH})}
 
-SOURCE_DIR=${PROG_DIR}/../systemd
+SOURCE_FILE=${PROG_DIR}/../systemd/fix_tty1_font.service
 DEST_DIR=/etc/systemd/system
 
-if [ ! -d "$SOURCE_DIR" ]; then
-    echo "Source dir not found: $SOURCE_DIR"
+if [ ! -f "$SOURCE_FILE" ]; then
+    echo "Source file not found: $SOURCE_FILE"
     exit 1
 fi
 
-echo "Copying $SOURCE_DIR to $DEST_DIR"
-\cp -fr "$SOURCE_DIR"/* "$DEST_DIR"/
+echo "Copying $SOURCE_FILE to $DEST_DIR"
+\cp -fr "$SOURCE_FILE"/* "$DEST_DIR"/
+systemctl enable fix_tty1_font.service
 exit $?
