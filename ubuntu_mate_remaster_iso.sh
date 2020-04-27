@@ -56,7 +56,6 @@ check_required_pkgs $REQD_PKGS
 check_avail_disk_space
 
 show_vars
-exit 0
 
 update_from_git
 # copy_linuxutils
