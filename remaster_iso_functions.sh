@@ -187,8 +187,7 @@ function update_from_git {
 
 function compile_kernel {
     cd $TOP_DIR
-    # We only need kernel_build if we are compiling the kernel
-    #update_gitdir ${TOP_DIR}/kernel_build 'https://github.com/sundarnagarajan/kernel_build.git' || exit 1
+    update_gitdir ${TOP_DIR}/kernel_build 'https://github.com/sundarnagarajan/kernel_build.git' || exit 1
 
     # Config values are in kernel_build.config
     # export KERNEL_TYPE=stable
